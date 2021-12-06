@@ -1,0 +1,55 @@
+/* Stylesheet by Emily Johansen, Geog 575 Lab 1 */
+#map { 
+    height: 600px;
+    width: 100%;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#panel {
+    width: 70%;
+    padding: 5px;
+    vertical-align: top;
+    text-align: center;
+    line-height: 25px;
+    margin: auto;
+}
+
+.range-slider {
+    width: 180px;
+}
+
+.sequence-control-container {
+    width: 280px;
+    height: 40px;
+/*    background-color: rgba(255,255,255,0.4);*/
+    padding: 10px;
+    line-height: 0px;
+    text-align: center;
+/*    border: solid gray 1px;*/
+}
+
+
+.legend-control-container {
+    width: 160px;
+    height: 110px;
+    background-color: rgba(225,255,238,0.5);
+    padding: 10px;
+    line-height: 5px;
+    text-align: center;
+    align-items: right;
+    border: solid gray 1px;
+}
+
+
+#forward {
+    float: right;
+}
+
+#reverse {
+    float: left;
+}
+
+.leaflet-popup-content p {
+    margin: 0.2em 0;
+}
