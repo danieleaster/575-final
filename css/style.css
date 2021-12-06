@@ -1,7 +1,7 @@
 /* Stylesheet by Emily Johansen, Geog 575 Lab 1 */
-#map { 
-    height: 600px;
-    width: 100%;
+#map {
+    height: 800px;
+    width: 600px;
     margin-top: 10px;
     display: inline-block;
 }

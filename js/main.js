@@ -3,8 +3,8 @@
 function createMap() {
     //centered to mid/upper WI
     var map = L.map('map', {
-        center: [44.2, -90.7],
-        zoom: 7.8,
+        center: [44.7, -90],
+        zoom: 6.5,
         //minZoom: 4
     });
 
