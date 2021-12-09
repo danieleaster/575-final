@@ -23,6 +23,7 @@ function createMap() {
     };
 
     L.control.layers(basemaps).addTo(map);
+    L.control.navbar().addTo(map);
 
     //call getData function
     getData(map);
