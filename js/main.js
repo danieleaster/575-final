@@ -3,10 +3,12 @@
 function createMap() {
     //centered to mid/upper WI
     var map = L.map('map', {
-        center: [44.7, -90],
+        //center: [44.7, -90],
         zoom: 6.5,
         //minZoom: 4
-    });
+    }).setView([44.7,-90],6.5);
+    //Attempting to Troubleshoot this line, I can't figure out why this is being deemed to not be a funtion when it is a plugin. 
+    //L.control.navbar().addTo(map);
     
     
 
@@ -426,7 +428,9 @@ function createSequenceControls(map, attributes){
         updateLegend(map, attributes[index]);
 
     });
+    //L.control.navbar().addTo(map);
 };
+
 
 //=====================================================================================================================
 
