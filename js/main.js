@@ -380,7 +380,7 @@ function createSequenceControls(map, attributes){
             return container;
         }
     });
-
+    
     map.addControl(new SequenceControl());
 
     //replace button content with images
@@ -428,7 +428,7 @@ function createSequenceControls(map, attributes){
         updateLegend(map, attributes[index]);
 
     });
-    //L.control.navbar().addTo(map);
+    
 };
 
 
