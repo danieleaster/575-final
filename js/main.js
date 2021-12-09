@@ -8,7 +8,7 @@ function createMap() {
         //minZoom: 4
     }).setView([44.7,-90],6.5);
     //Attempting to Troubleshoot this line, I can't figure out why this is being deemed to not be a funtion when it is a plugin. 
-    //L.control.navbar().addTo(map);
+    //L.control.NavBar().addTo(map);
     
     
 
