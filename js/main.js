@@ -1,4 +1,4 @@
-/* Emily Johansen, Geog 575 Lab 1 */
+/* GEO 575 Group Project- Emily Johansen, Daniel Easter, Richard Helsley*/
 
 function createMap() {
     //centered to mid/upper WI
