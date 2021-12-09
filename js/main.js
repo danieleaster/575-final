@@ -7,7 +7,8 @@ function createMap() {
         zoom: 6.5,
         //minZoom: 4
     });
-    //L.control.navbar().addTo(map);
+    
+    
 
     //add forest green mapbox basemap tilelayer
     var forest = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', { attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery   <a href="http://mapbox.com">Mapbox</a>', maxZoom: 18, id: 'emilyjo/ckuk9l61v7x8y19nybp6l6rhb', accessToken:'pk.eyJ1IjoiZW1pbHlqbyIsImEiOiJjazA2MDI4MjEwNWM2M3BxYm42N29rMDNoIn0.TCOSlqzEBB-uE8PDYUq4OA'}).addTo(map);
