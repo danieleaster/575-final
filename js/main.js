@@ -8,27 +8,33 @@ function createMap() {
         //minZoom: 4
     }).setView([44.7,-90],6.5);
     //Attempting to Troubleshoot this line, I can't figure out why this is being deemed to not be a funtion when it is a plugin. Specfically referencing the NavBar command.
-    //It should be simply adding to the map but Java keeps identifying it as a function and I'm not sure how to correct it. 12.08.2021.
+    //It should be simply adding to the map but Java keeps identifying it as a function and I'm not sure how to correct it. 12.08.2021. RH
     L.Control.geocoder().addTo(map);
     //L.Control.NavBar().addTo(map);
     
     
+    //Base Layer for Map 
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+     }).addTo(map);
 
-    //add forest green mapbox basemap tilelayer
-    var forest = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', { attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery   <a href="http://mapbox.com">Mapbox</a>', maxZoom: 18, id: 'emilyjo/ckuk9l61v7x8y19nybp6l6rhb', accessToken:'pk.eyJ1IjoiZW1pbHlqbyIsImEiOiJjazA2MDI4MjEwNWM2M3BxYm42N29rMDNoIn0.TCOSlqzEBB-uE8PDYUq4OA'}).addTo(map);
+     
+    // commented out to experiment with base layers.
+    // //add forest green mapbox basemap tilelayer
+    // var forest = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', { attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery   <a href="http://mapbox.com">Mapbox</a>', maxZoom: 18, id: 'emilyjo/ckuk9l61v7x8y19nybp6l6rhb', accessToken:'pk.eyJ1IjoiZW1pbHlqbyIsImEiOiJjazA2MDI4MjEwNWM2M3BxYm42N29rMDNoIn0.TCOSlqzEBB-uE8PDYUq4OA'}).addTo(map);
 
-    //add osm basemap tilelayer
-    var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
-    });
+    // //add osm basemap tilelayer
+    // var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+    // });
 
-    //define basemaps and add switcher control
-    var basemaps = {
-        "Dark": forest,
-        "Light": osm
-    };
+    // //define basemaps and add switcher control
+    // var basemaps = {
+    //     "Dark": forest,
+    //     "Light": osm
+    // };
 
-    L.control.layers(basemaps).addTo(map);
+    // L.control.layers(basemaps).addTo(map);
     
 
     //call getData function
