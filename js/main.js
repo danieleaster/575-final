@@ -10,7 +10,7 @@ function createMap() {
     //Attempting to Troubleshoot this line, I can't figure out why this is being deemed to not be a funtion when it is a plugin. Specfically referencing the NavBar command.
     //It should be simply adding to the map but Java keeps identifying it as a function and I'm not sure how to correct it. 12.08.2021. RH
     L.Control.geocoder().addTo(map);
-    //L.Control.NavBar().addTo(map);
+    //L.Control.navbar().addTo(map);
     
     
     //Base Layer for Map 
