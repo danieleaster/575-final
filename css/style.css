@@ -1,12 +1,72 @@
 /* Stylesheet by Emily Johansen, Geog 575 Lab 1 */
+body{
+  background-color:rgb(250, 250, 250)  
+}
+
+.topnav{
+    background-color:rgb(206, 94, 94);
+    overflow: hidden;
+}
+
+.topnav a{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover{
+    background-color:rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+}
+#mapCaption{
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 80px;
+}
 #map {
+    position: static;
     height: 800px;
-    width: 600px;
+    width: 800px;
     margin-top: 10px;
+    margin-left: 525px;
+    border: solid;
     display: inline-block;
+}
+#aboutBorder{
+    background-color:rgb(206, 94, 94);
+    overflow: hidden;
+    height: 40px;
+    color:white;
+    text-align:center;
+    font-size: 30px;
+
+}
+
+#chartBorder{
+    background-color:rgb(206, 94, 94);
+    overflow: hidden;
+    height: 40px;
+    color:white;
+    text-align:center;
+    font-size: 30px;
+
+}
+
+#sourceBorder{
+    background-color:rgb(206, 94, 94);
+    overflow: hidden;
+    height: 40px;
+    color:white;
+    text-align:center;
+    font-size: 30px;
+
 }
 
 #panel {
+    background-color: rgb(255, 255, 255);
     width: 70%;
     padding: 5px;
     vertical-align: top;
