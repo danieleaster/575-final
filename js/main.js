@@ -175,8 +175,8 @@ function pointToLayer(feature, latlng, attributes){
     ;
 
     //add formatted attribute to panel content string
-    //var year = attribute.split("_")[1];
-    //panelContent += <p>feature.properties + " million</p>";
+    var year = attribute.split("_")[1];
+    panelContent += feature.properties + " million ";
 
     //event listeners to open popup on hover
     layer.on({
