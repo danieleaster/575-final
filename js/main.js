@@ -60,7 +60,7 @@ function getData(map){
     });
     */
     
-    $.ajax("data/analyzedNew.geojson", {
+    $.ajax("data/master.geojson", {
         dataType: "json",
         success: function(response){
             //create an attributes array
@@ -90,7 +90,7 @@ function processData(data){
     for (var attribute in properties){
 
         //only take attributes with Year values
-        if (attribute.indexOf("20") > -1){
+        if (attribute.indexOf("pc") > -1){
             attributes.push(attribute);
         };
     };
@@ -142,7 +142,7 @@ function getCircleValues(map, attribute){
 function calcPropRadius(attValue) {
 
     //scale factor to adjust symbol size evenly
-    var scaleFactor = 15
+    var scaleFactor = 10000
 ;
 
     //area based on attribute value and scale factor
@@ -163,8 +163,8 @@ function pointToLayer(feature, latlng, attributes){
     //create marker options
     var options = {
         fillColor: "#004d1a",
-        color: "#000",
-        weight: 1,
+        color: "#004d1a",
+        weight: 8,
         opacity: 1,
         fillOpacity: 0.8
     };
@@ -257,7 +257,8 @@ function Popup(properties, attribute, layer, radius){
     this.year = attribute.split("_")[1];
     this.population = this.properties[attribute];
     //"There were ## antlered deer per square county mile in 'year' in 'county' County.
-    this.content = "<p><b>There were " + (this.population) + " deer that tested positive in " + this.properties.analyzed + " County in " + this.year + ".</b></p>";
+    //this.content = "<p><b>There were " + (this.population) + " deer that tested positive in " + this.properties.county + " County in " + this.year + ".</b></p>";
+    this.content = this.properties.county + " - " + this.year + "</br>" + this.properties. + " carcasses tested" + " </br> " + (this.population*100).toFixed(2) + "% positive tests"
 
     this.bindToLayer = function(){
         this.layer.bindPopup(this.content, {
