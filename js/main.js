@@ -129,9 +129,9 @@ function getCircleValues(map, attribute){
 
     //return values as an object
     return {
-        max: max,
-        mean: mean,
-        min: min
+        max: max*100,
+        mean: mean*100,
+        min: min*100 //these
     };
 };
 
@@ -353,7 +353,7 @@ function updateLegend(map, attribute){
     for (var key in circleValues){
 
         //get the radius
-        var radius = calcPropRadius(circleValues[key]);
+        var radius = (calcPropRadius(circleValues[key])/20);
 
         //assign the cy and r attributes
         $('#'+key).attr({
@@ -362,7 +362,7 @@ function updateLegend(map, attribute){
         });
 
         //add legend text
-        $('#'+key+'-text').text(Math.round(circleValues[key]) + " ");
+        $('#'+key+'-text').text(Math.round(circleValues[key]) + "%");
     };
 };
 
