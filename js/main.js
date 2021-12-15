@@ -258,8 +258,8 @@ function Popup(properties, attribute, layer, radius){
     this.population = this.properties[attribute];
     //"There were ## antlered deer per square county mile in 'year' in 'county' County.
     //this.content = "<p><b>There were " + (this.population) + " deer that tested positive in " + this.properties.county + " County in " + this.year + ".</b></p>";
-    this.content = this.properties.county + " - " + this.year + "</br>" + this.properties + " carcasses tested" + " </br> " + (this.population*100).toFixed(2) + "% positive tests";
-
+    //this.content = this.properties.county + " - " + this.year + "</br>" + this.properties + " carcasses tested" + " </br> " + (this.population*100).toFixed(2) + "% positive tests";
+    this.content = this.properties.county + " - " + this.year + "</br>" + (this.population*100).toFixed(2) + "% of carcasses" + "</br>" + "analyzed were positive";
     this.bindToLayer = function(){
         this.layer.bindPopup(this.content, {
             offset: new L.Point(0,-radius)
