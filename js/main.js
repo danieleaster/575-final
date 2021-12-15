@@ -44,9 +44,23 @@ function createMap() {
 
 //Function to retrieve the data and place it on the map
 function getData(map){
-
+/*
     //load the data
     $.ajax("data/County_Boundaries_24K.geojson", {
+        dataType: "json",
+        success: function(response){
+            //create an attributes array
+            var attributes = processData(response);
+
+            call function to create proportional symbols
+            createPropSymbols(response, map, attributes);
+            createSequenceControls(map, attributes);
+            createLegend(map, attributes);
+        }
+    });
+    */
+    
+    $.ajax("data/analyzedNew.geojson", {
         dataType: "json",
         success: function(response){
             //create an attributes array
@@ -76,7 +90,7 @@ function processData(data){
     for (var attribute in properties){
 
         //only take attributes with Year values
-        if (attribute.indexOf("yr") > -1){
+        if (attribute.indexOf("20") > -1){
             attributes.push(attribute);
         };
     };
@@ -243,7 +257,7 @@ function Popup(properties, attribute, layer, radius){
     this.year = attribute.split("_")[1];
     this.population = this.properties[attribute];
     //"There were ## antlered deer per square county mile in 'year' in 'county' County.
-    this.content = "<p><b>There were " + (this.population) + " antlered deer per square mile per county, shot in " + this.properties.name + " County in " + this.year + ".</b></p>";
+    this.content = "<p><b>There were " + (this.population) + " deer that tested positive in " + this.properties.analyzed + " County in " + this.year + ".</b></p>";
 
     this.bindToLayer = function(){
         this.layer.bindPopup(this.content, {
@@ -326,7 +340,7 @@ function updateLegend(map, attribute){
 
     //create content for legend
     var year = attribute.split("_")[1];
-    var content = "<b>Number of antlered deer<br><br><br> shot in " + year + "</b><br><br><br>max / mean / min";
+    var content = "<b>Number of deer that tested<br><br><br>positive for CWD in " + year + "</b><br><br><br>max / mean / min";
 
 
     //replace legend content
@@ -406,12 +420,12 @@ function createSequenceControls(map, attributes){
             index++;
 
             //if past the last attribute, wrap around to first attribute
-            index = index > 6 ? 0 : index;
+            index = index > 18 ? 0 : index;
         } else if ($(this).attr('id') == 'reverse'){
             index--;
 
             //if past the first attribute, wrap around to last attribute
-            index = index < 0 ? 6 : index;
+            index = index < 0 ? 18 : index;
         }
 
         //update slider
@@ -421,7 +435,7 @@ function createSequenceControls(map, attributes){
 
     //set slider attributes
     $('.range-slider').attr({
-        max: 6,
+        max: 18,
         min: 0,
         value: 0,
         step: 1,
