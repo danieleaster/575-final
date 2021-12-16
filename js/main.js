@@ -5,12 +5,13 @@ function createMap() {
     var map = L.map('map', {
         //center: [44.7, -90],
         zoom: 6.5,
-        //minZoom: 4
+        minZoom: 6.5,
     }).setView([44.7,-90],6.5);
     //Attempting to Troubleshoot this line, I can't figure out why this is being deemed to not be a funtion when it is a plugin. Specfically referencing the NavBar command.
     //It should be simply adding to the map but Java keeps identifying it as a function and I'm not sure how to correct it. 12.08.2021. RH
+    //L.control.navbar().addTo(map);
     L.Control.geocoder().addTo(map);
-    //L.Control.navbar().addTo(map);
+    
     
     
     //Base Layer for Map 
