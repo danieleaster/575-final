@@ -31,7 +31,8 @@ body{
     height: 800px;
     width: 800px;
     margin-top: 10px;
-    margin-left: 20%;
+    /* DO NOT CHANGE THE LEFT MARGIN! */
+    margin-left: 525px;
     border: solid;
     display: inline-block;
 }
